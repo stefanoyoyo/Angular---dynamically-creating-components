@@ -23,9 +23,9 @@ export class App {
 
     this.componentRef = this.container.createComponent(factory);
     
-    this.componentRef.instance.type = type;
-
-    this.componentRef.instance.output.subscribe(event => console.log(event));
+    /**Non obbligatori! */
+    // this.componentRef.instance.type = type;
+    // this.componentRef.instance.output.subscribe(event => console.log(event));
 
     setTimeout(() => {
       this.shared.text = 'Changed. Dynamic component can share info with other components by a service.';
