@@ -14,6 +14,9 @@ import { SharedService } from './Services/shared.service';
 export class App {
  @ViewChild("alertContainer", { read: ViewContainerRef }) container;
  componentRef: ComponentRef;
+
+  // NOn si può
+  //  container: HTMLElement = document.querySelector('alertContainer');
  
   constructor(private resolver: ComponentFactoryResolver, private shared: SharedService) {}
   
@@ -24,8 +27,8 @@ export class App {
     this.componentRef = this.container.createComponent(factory);
     
     /**Non obbligatori! */
-    // this.componentRef.instance.type = type;
-    // this.componentRef.instance.output.subscribe(event => console.log(event));
+    this.componentRef.instance.type = type;
+    this.componentRef.instance.output.subscribe(event => console.log(event));
 
     setTimeout(() => {
       this.shared.text = 'Changed. Dynamic component can share info with other components by a service.';
