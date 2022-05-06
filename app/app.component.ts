@@ -24,7 +24,6 @@ export class App {
     /**Elimina l'html al suo interno, altrimenti vedo il componente dupplicato */
     this.container.clear();
     const factory: ComponentFactory = this.resolver.resolveComponentFactory(AlertComponent);
-
     this.componentRef = this.container.createComponent(factory);
     
     /**Non obbligatori! */
