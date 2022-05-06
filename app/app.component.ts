@@ -21,6 +21,7 @@ export class App {
   constructor(private resolver: ComponentFactoryResolver, private shared: SharedService) {}
   
   createComponent(type) {
+    /**Elimina l'html al suo interno, altrimenti vedo il componente dupplicato */
     this.container.clear();
     const factory: ComponentFactory = this.resolver.resolveComponentFactory(AlertComponent);
 
