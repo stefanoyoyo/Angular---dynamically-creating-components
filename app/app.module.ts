@@ -3,12 +3,14 @@ import {Component, NgModule,Input,ComponentFactory,ComponentRef, ComponentFactor
 import {BrowserModule} from '@angular/platform-browser'
 import {AlertComponent} from './alert.component';
 import {App} from './app.component';
+import { SharedService } from './Services/shared.service';
 
 
 @NgModule({
   imports: [ BrowserModule ],
   declarations: [ App , AlertComponent],
   entryComponents: [AlertComponent],
-  bootstrap: [ App ]
+  bootstrap: [ App ],
+  providers: [SharedService]
 })
 export class AppModule {}
